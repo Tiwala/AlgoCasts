@@ -12,6 +12,32 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function modulo(a, b) {
+    let quotient = parseInt(a/b);
+    return a - (quotient * b);
+}
+
+function fizzBuzz(n) {
+    // for(let i = 1; i <= n; i++) {
+    //     if (modulo(i, 15) === 0) {
+    //         console.log('fizzbuzz')
+    //     } else if (modulo(i, 5) === 0) {
+    //         console.log('buzz');
+    //     } else if (modulo(i, 3) === 0) {
+    //         console.log('fizz');
+    //     } else {
+    //         console.log(i);
+    //     }
+    // }
+
+    for(let i = 1; i <= n; i++) {
+        let result = '';
+        modulo(i, 3) === 0 ? result += 'fizz': '';
+        modulo(i, 5) === 0 ? result += 'buzz': '';
+        result = result || i
+
+        console.log(result);
+    }
+}
 
 module.exports = fizzBuzz;
